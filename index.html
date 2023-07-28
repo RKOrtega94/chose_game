@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/cards_selection.css" />
+  </head>
+  <body>
+    <!-- Pregunta 2 -->
+    <div
+      class="col-lg-12 col-md-12 col-sm-12 col-xs-12 fuente1"
+      style="margin: 5px 0px"
+    >
+      <img src="img/ico_evaluacion.png" alt="" />
+      <input
+        type="text"
+        size="2"
+        style="text-align: center"
+        class="nota-abierta"
+        min="0"
+        max="10"
+        id="pre2a"
+        readonly=""
+      />
+      <font><b class="numRosa">2. </b></font>
+      <b>Observa</b> las imágenes y <b>marca</b> con una
+      <b class="textblue">X</b> el recuadro que ilustra al robot manipulador.
+      <i class="5pts"></i><i class="c-d"></i>
+      <div
+        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 fuente1"
+        align="center"
+      >
+        <div id="p2act"></div>
+        <button class="btn" onclick="calificar()">Verificar</button>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/cards_selection.js"></script>
+    <script>
+      const id = "p2act";
+      const items = [
+        "/assets/img1.png",
+        "/assets/img2.png",
+        "/assets/img3.png",
+        "/assets/img4.png",
+      ];
+
+      buildCardSelection(id, items);
+
+      function calificar() {
+        let core = coreCardSelection("#p2act", ["", "X", "X", "X"]);
+
+        $("#pre2a").val(core);
+      }
+    </script>
+  </body>
+</html>
